@@ -24,6 +24,7 @@ routes.put('/profile/edit', ProfileController.updateProfile)
 
 routes.post('/profile/product', ProductController.createProduct)
 routes.get('/profile/product', ProductController.listUserProducts)
+routes.put('/profile/product/:productId', ProductController.editProduct)
 
 
 module.exports = routes
