@@ -4,6 +4,7 @@ const authMiddleware = require('./middlewares/auth')
 const UserController = require('./controllers/UserController')
 const ProfileController = require('./controllers/ProfileController')
 const ProductController = require('./controllers/ProductController')
+const SaleController = require('./controllers/SaleController')
 
 const routes = express.Router()
 
@@ -25,6 +26,8 @@ routes.put('/profile/edit', ProfileController.updateProfile)
 routes.post('/profile/product', ProductController.createProduct)
 routes.get('/profile/product', ProductController.listUserProducts)
 routes.put('/profile/product/:productId', ProductController.editProduct)
+routes.delete('/profile/product/:productId', ProductController.deleteProduct)
 
+routes.post('/cart', SaleController.checkOutCart)
 
 module.exports = routes

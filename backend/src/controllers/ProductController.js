@@ -101,14 +101,32 @@ module.exports = {
                 category_id: categoryId
             }, { 
                 where: { 
-                    id: productId,
-                    user_id: id 
+                    user_id: id,
+                    id: productId
                 } 
             })
 
             return res.send()
         } catch(err) {
             return res.status(400).send({ error: 'Failed to edit product, try again' })
+        }
+    },
+
+    async deleteProduct(req, res) {
+        const { productId } = req.params
+        const id = req.userId
+
+        try {
+            await Product.destroy({
+                where: {
+                    user_id: id,
+                    id: productId
+                }
+            })
+
+            return res.send()
+        } catch(err) {
+            return res.status(400).send({ error: 'Failed to delete product, try again' })
         }
     }
 }
