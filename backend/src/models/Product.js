@@ -17,11 +17,7 @@ class Product extends Model {
 
         this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' })
 
-        this.belongsToMany(models.Sale, {
-            foreignKey: 'product_id',
-            through: 'products_sold',
-            as: 'sales'
-        })
+        this.hasMany(models.ProductSold, { foreignKey: 'product_id', as: 'products_sold' })
     }
 }
 

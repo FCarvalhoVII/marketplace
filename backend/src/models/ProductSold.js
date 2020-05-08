@@ -9,6 +9,12 @@ class ProductSold extends Model {
             tableName: 'products_sold'
         })
     }
+
+    static associate(models) {
+        this.belongsTo(models.Sale, { foreignKey: 'sale_id', as: 'sales' })
+
+        this.belongsTo(models.Product, { foreignKey: 'product_id', as: 'products' })
+    }
 }
 
 module.exports = ProductSold

@@ -12,11 +12,7 @@ class Sale extends Model {
     static associate(models) {
         this.belongsTo(models.User, { foreignKey: 'buyer_id', as: 'users' })
 
-        this.belongsToMany(models.Product, {
-            foreignKey: 'sale_id',
-            through: 'products_sold',
-            as: 'products'
-        })
+        this.hasMany(models.ProductSold, { foreignKey: 'sale_id', as: 'products_sold' })
     }
 }
 
