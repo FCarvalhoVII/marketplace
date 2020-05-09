@@ -29,5 +29,7 @@ routes.put('/profile/product/:productId', ProductController.editProduct)
 routes.delete('/profile/product/:productId', ProductController.deleteProduct)
 
 routes.post('/cart', SaleController.checkOutCart)
+routes.post('/cart/:cartId', SaleController.savingSoldProducts)
+routes.get('/purchased', SaleController.listPurchasedProducts)
 
 module.exports = routes
