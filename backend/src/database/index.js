@@ -20,6 +20,7 @@ User.init(connection)
 Address.associate(connection.models)
 Category.associate(connection.models)
 Product.associate(connection.models)
+ProductSold.associate(connection.models)
 Sale.associate(connection.models)
 User.associate(connection.models)
 
