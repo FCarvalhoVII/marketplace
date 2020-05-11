@@ -11,4 +11,4 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 
-app.listen(3001)
+app.listen(3001, () => console.log('Server is running in port 3001'))
