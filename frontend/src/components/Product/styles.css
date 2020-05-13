@@ -1,0 +1,42 @@
+.product {
+    display: flex;
+
+    margin: 20px 20px 0 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px #aaa;
+    background: linear-gradient(to top, #ddd, #fff);
+}
+
+.product-img {
+    background: url('../../assets/imgDefault.jpg') no-repeat center center / cover;
+    width: 180px;
+    height: 180px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.product-info h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(12, 168, 12);
+}
+
+.salesman-info p {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #00000080;
+}

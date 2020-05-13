@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    align-items: flex-start;
+
+    padding: 10px;
+    margin: 5px 5px 0 0;
+    border-radius: 0 3px 3px 0;
+
+    background: #fff;
+    opacity: 0.8;
+}
+
+.navbar section h2 {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0.07em;
+    margin: 0 10px 10px 0;
+
+    background: -webkit-linear-gradient(#1c78fa, #4090ff33);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar section h2 svg {
+    color: #4090ff;
+    margin-right: 10px;
+}
+
+.navbar section p {
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #4090ff;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.navbar section p:hover {
+    background: rgba(64, 144, 255, 0.2);
+}
