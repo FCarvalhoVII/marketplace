@@ -2,7 +2,7 @@ import React from 'react'
 
 import './styles.css'
 
-function Product() {
+function Product({ name, price, salesman }) {
     return (
         <div className="product">
             <div className="product-img">
@@ -10,12 +10,18 @@ function Product() {
             </div>
 
             <div className="product-info">
-                <h3>Notebook</h3>
-                <p>R$ 3.000,00</p>
+                <h3>{ name }</h3>
+
+                <p>
+                    {
+                        Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
+                            .format(price)
+                    }
+                </p>
                 
                 <div className="salesman-info">
-                    <p>Cidade</p>
-                    <p>Nome</p>
+                    <p>Vendedor:</p>
+                    <p>{ salesman }</p>
                 </div>
             </div>
         </div>
