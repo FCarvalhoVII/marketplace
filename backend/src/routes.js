@@ -5,6 +5,7 @@ const UserController = require('./controllers/UserController')
 const ProfileController = require('./controllers/ProfileController')
 const ProductController = require('./controllers/ProductController')
 const SaleController = require('./controllers/SaleController')
+const CategoryController = require('./controllers/CategoryController')
 
 const routes = express.Router()
 
@@ -13,6 +14,8 @@ routes.post('/register', UserController.create)
 routes.post('/login', UserController.login)
 
 routes.get('/profile/:id', ProfileController.viewProfile)
+
+routes.get('/categories', CategoryController.getCategories)
 
 routes.get('/products', ProductController.listAllProducts)
 routes.get('/products/category', ProductController.listProductsByCategory)
