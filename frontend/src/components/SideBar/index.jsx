@@ -23,7 +23,7 @@ function SideBar() {
                 <hr/>
                 {categories.map(category => (
                     <React.Fragment key={category.id}>
-                        <Link key={category.id} className="link" to="/">
+                        <Link key={category.id} className="link" to={`/category/${category.id}`}>
                             <p>{ category.name }</p>
                         </Link>
                         <hr />
