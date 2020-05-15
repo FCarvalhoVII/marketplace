@@ -9,7 +9,9 @@ function Header() {
     return (
         <header>
             <div className="logo">
-                <h1><FcElectronics />Marketplace</h1>
+                <Link className="button-home" to="/">
+                    <h1><FcElectronics />Marketplace</h1>
+                </Link>
 
                 <div className="buttons-container">
                     <Link to="/register">
