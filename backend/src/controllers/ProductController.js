@@ -20,7 +20,7 @@ module.exports = {
     },
 
     async listProductsByCategory(req, res) {
-        const { categoryId } = req.body
+        const { categoryId } = req.params
 
         try {
             const products = await Category.findByPk(categoryId, {

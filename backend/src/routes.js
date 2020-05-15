@@ -18,7 +18,7 @@ routes.get('/profile/:id', ProfileController.viewProfile)
 routes.get('/categories', CategoryController.getCategories)
 
 routes.get('/products', ProductController.listAllProducts)
-routes.get('/products/category', ProductController.listProductsByCategory)
+routes.get('/products/:categoryId', ProductController.listProductsByCategory)
 routes.get('/products/:productId', ProductController.productInfo)
 
 routes.use(authMiddleware)
