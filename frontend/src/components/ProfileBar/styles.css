@@ -1,0 +1,48 @@
+.user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 188px;
+    margin-top: 10px;
+}
+
+.user-img {
+    background: url('../../assets/user.png') no-repeat center center / cover;
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px #2897ff;
+}
+
+.user-container h4 {
+    margin-top: 15px;
+    color: #ddf;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.navbar section .link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar section p {
+    width: 100%;
+    text-align: center;
+}
