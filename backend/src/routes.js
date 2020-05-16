@@ -27,7 +27,7 @@ routes.post('/profile/info', ProfileController.createProfile)
 routes.put('/profile/edit', ProfileController.updateProfile)
 
 routes.post('/profile/product', ProductController.createProduct)
-routes.get('/profile/product', ProductController.listUserProducts)
+routes.get('/userProfile/product', ProductController.listUserProducts)
 routes.put('/profile/product/:productId', ProductController.editProduct)
 routes.delete('/profile/product/:productId', ProductController.deleteProduct)
 
