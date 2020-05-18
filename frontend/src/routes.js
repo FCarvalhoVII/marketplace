@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Profile from './pages/Profile'
 import CreateAddress from './pages/Profile/Create'
+import ProfileInfo from './pages/Profile/Info'
 import AddProduct from './pages/Profile/AddProduct'
 
 function Routes() {
@@ -19,6 +20,7 @@ function Routes() {
                 <Route path="/register" component={Register} />
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/profile/addProduct" component={AddProduct} />
+                <Route path="/profile/info" component={ProfileInfo} />
                 <Route path="/address" component={CreateAddress} />
             </Switch>
         </BrowserRouter>

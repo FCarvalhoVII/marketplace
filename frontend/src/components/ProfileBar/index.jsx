@@ -15,7 +15,7 @@ function ProfileBar({ name }) {
 
             <section>
                 <hr/>
-                <Link className="link" to="/">
+                <Link className="link" to="/profile/info">
                     <p>Seu Endereço</p>
                 </Link>
                 <hr/>
