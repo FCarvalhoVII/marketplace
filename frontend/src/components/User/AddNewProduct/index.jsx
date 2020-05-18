@@ -88,7 +88,6 @@ function AddNewProduct() {
                             <option 
                                 key={category.id} 
                                 value={category.id}
-                                onSubmit={category.id}
                             >
                                 { category.name }
                             </option>
