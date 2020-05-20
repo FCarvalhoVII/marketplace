@@ -7,8 +7,6 @@ import Footer from '../../../components/Footer'
 
 import api from '../../../services/api'
 
-import './styles.css'
-
 function AddProduct() {
     const [user, setUser] = useState('')
 
