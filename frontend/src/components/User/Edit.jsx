@@ -32,6 +32,7 @@ function Edit({ userId }) {
             })
 
             history.push('/profile')
+            window.location.reload()
         } catch(err) {
             alert('Falha ao registrar endereço, tente novamente.')
         }
