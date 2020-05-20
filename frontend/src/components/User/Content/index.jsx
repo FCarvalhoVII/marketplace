@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { MdDelete } from 'react-icons/md'
+
+import ConfirmDeleteProduct from '../../../components/User/DeleteProduct'
 
 import './styles.css'
 
 function UserContent({ name, city, products }) {
+    const [activeDelete, setActiveDelete] = useState(false)
+    const [productId, setProductId] = useState('')
+
+    function handleActiveDelete(id) {
+        setActiveDelete(!activeDelete)
+        setProductId(id)
+    }
+
     return (
         <div className="profile-container">
             <h2>{ name }</h2>
@@ -10,7 +21,7 @@ function UserContent({ name, city, products }) {
             <h3>{ city }</h3>
 
             <ul>
-                <h3>Produtos à venda:</h3>
+                <h3>Produtos a venda:</h3>
 
                 {products.map(product => (
                     <li key={product.id}>
@@ -29,9 +40,21 @@ function UserContent({ name, city, products }) {
                         </span>
 
                         <span> Estoque: {product.stock}</span>
+
+                        <button 
+                            className="button-delete" 
+                            onClick={() => handleActiveDelete(product.id)}
+                        >
+                            <MdDelete />
+                        </button>
                     </li>
                 ))}
             </ul>
+            <ConfirmDeleteProduct 
+                activeDelete={activeDelete}
+                handleCancel={handleActiveDelete}
+                productId={productId}
+            />
         </div>
     )
 }
