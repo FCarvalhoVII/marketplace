@@ -19,7 +19,7 @@ routes.get('/categories', CategoryController.getCategories)
 
 routes.get('/products', ProductController.listAllProducts)
 routes.get('/products/:categoryId', ProductController.listProductsByCategory)
-routes.get('/products/:productId', ProductController.productInfo)
+routes.get('/product/:productId', ProductController.productInfo)
 
 routes.use(authMiddleware)
 routes.get('/profile', ProfileController.index)
