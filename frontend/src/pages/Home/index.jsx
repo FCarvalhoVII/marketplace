@@ -37,6 +37,7 @@ function Home() {
                                 name={product.name}
                                 price={product.price}
                                 salesman={product.user.name}
+                                productId={product.id}
                             />
                         ))}
                     </div>
