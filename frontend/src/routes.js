@@ -8,6 +8,8 @@ import Register from './pages/Register'
 import Profile from './pages/Profile'
 import CreateAddress from './pages/Profile/Create'
 import ProfileInfo from './pages/Profile/Info'
+import EditProduct from './pages/Profile/EditProduct'
+import Product from './pages/Product'
 import AddProduct from './pages/Profile/AddProduct'
 
 function Routes() {
@@ -21,6 +23,8 @@ function Routes() {
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/profile/addProduct" component={AddProduct} />
                 <Route path="/profile/info" component={ProfileInfo} />
+                <Route path="/profile/:productId" children={<EditProduct />} />
+                <Route path="/product/:productId" children={<Product />} />
                 <Route path="/address" component={CreateAddress} />
             </Switch>
         </BrowserRouter>
