@@ -2,12 +2,12 @@
     display: flex;
     align-items: flex-start;
 
-    padding: 10px;
+    padding: 10px 10px 10px 50px;
     margin: 5px 5px 0 0;
     border-radius: 0 3px 3px 0;
+    box-shadow: 1px 1px 3px #000;
 
-    background: #fff;
-    opacity: 0.8;
+    background: linear-gradient(to top, #181a1d, #191b2e);
 }
 
 .navbar section h2 {
@@ -18,20 +18,28 @@
     letter-spacing: 0.07em;
     margin: 0 10px 10px 0;
 
-    background: -webkit-linear-gradient(#1c78fa, #4090ff33);
+    background: -webkit-linear-gradient(#2897ff, #4090ff33);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .navbar section h2 svg {
-    color: #4090ff;
+    color: #2897ff;
     margin-right: 10px;
 }
 
 .navbar section p {
     padding: 10px 20px;
     border-radius: 8px;
-    color: #4090ff;
+    color: #2897ff;
+}
+
+.navbar hr {
+    width: 90%;
+    height: 1px;
+    margin: 0;
+    border: none;
+    background: linear-gradient(to right, #24272b, #164b7c, #24272b);
 }
 
 .link {
@@ -39,5 +47,5 @@
 }
 
 .navbar section p:hover {
-    background: rgba(64, 144, 255, 0.2);
+    background: #4090ff33;
 }

@@ -11,8 +11,7 @@
     align-items: center;
     justify-content: center;
 
-    background-color: #efefef;
-    opacity: 0.7;
+    background-color: #eef;
     border-radius: 10px;
     box-shadow: 1px 1px 3px #000;
 }
@@ -22,6 +21,10 @@
     align-items: center;
     font-size: 40px;
     letter-spacing: 0.07em;
+
+    background: -webkit-linear-gradient(#2897ff, #4090ff33);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .address-container h1 svg {
@@ -33,5 +36,5 @@
     height: 2px;
     margin: 20px 0;
     border: none;
-    background: linear-gradient(to right, #efefef, #6190e8, #efefef);
+    background: linear-gradient(to right, #eef, #6190e8, #eef);
 }

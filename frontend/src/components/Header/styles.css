@@ -1,8 +1,8 @@
 header {
     width: 100%;
-    background-color: #fff;
-    opacity: 0.8;
+    background: linear-gradient(to top, #191b2e, #3a3c4d);
     box-shadow: 1px 1px 3px #000;
+    padding: 10px 40px;
 }
 
 header hr {
@@ -10,7 +10,7 @@ header hr {
     height: 2px;
     margin: 0;
     border: none;
-    background: linear-gradient(to right, #fff, #4090ff, #fff);
+    background: linear-gradient(to right, #24272b, #2897ff, #24272b);
 }
 
 .logo {
@@ -27,13 +27,42 @@ header hr {
     margin-left: auto;
 }
 
+.toggle-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.toggle-profile .user-mini-img {
+    background: url('../../assets/user.png') no-repeat center center / cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px #2897ff;
+}
+
+.toggle-profile a:hover {
+    filter: brightness(120%);
+}
+
+.toggle-profile h3 {
+    color: #2897ff;
+}
+
+.toggle-profile p {
+    font-size: 12px;
+    color: #2897ff;
+}
+
 .logo h1 {
     display: flex;
     align-items: center;
     font-size: 30px;
     letter-spacing: 0.07em;
 
-    background: -webkit-linear-gradient(#1c78fa, #4090ff33);
+    background: -webkit-linear-gradient(#2897ff, #4090ff33);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -42,11 +71,20 @@ header hr {
     margin-right: 5px;
 }
 
+.button-home {
+    transition: filter 0.2s;
+}
+
+.button-home:hover {
+    filter: brightness(115%);
+
+}
+
 .button-register {
     background: transparent;
-    border: 2px solid #4090ff;
+    border: 2px solid #2897ff;
     border-radius: 8px;
-    color: #4090ff;
+    color: #2897ff;
     font-weight: 700;
     display: inline-block;
     text-align: center;
@@ -58,7 +96,8 @@ header hr {
 }
 
 .button-register:hover {
-    background: linear-gradient(to top, #eee, #fff);
+    background: linear-gradient(to top, #181a1d, #3a3c4d);
+    box-shadow: 0px 0px 5px #2897ff;
 }
 
 .button-register:active {
@@ -66,10 +105,10 @@ header hr {
 }
 
 .button-login {
-    background: #4090ff;
+    background: #2897ff;
     border: 0;
     border-radius: 8px;
-    color: #fff;
+    color: #35384a;
     font-weight: 700;
     display: inline-block;
     text-align: center;
@@ -81,9 +120,34 @@ header hr {
 
 .button-login:hover {
     filter: brightness(120%);
+    box-shadow: 0px 0px 5px #2897ff;
 }
 
 .button-login:active {
+    filter: brightness(80%);
+}
+
+.button-logout {
+    background: #ff2828d6;
+    border: 0;
+    border-radius: 8px;
+    color: #35384a;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 15px;
+    margin-left: 20px;
+    transition: filter 0.2s;
+}
+
+.button-logout:hover {
+    filter: brightness(120%);
+    box-shadow: 0px 0px 5px #ff2828d6;
+}
+
+.button-logout:active {
     filter: brightness(80%);
 }
 
@@ -96,7 +160,7 @@ header hr {
 .cart {
     display: flex;
     align-items: center;
-    color: #4090ff;
+    color: #2897ff;
     padding: 3px;
     margin: 7px;
     border-radius: 8px;
@@ -110,8 +174,8 @@ header hr {
 }
 
 .cart:hover {
-    box-shadow: 0px 0px 5px #4090ff;
-    background: linear-gradient(to top, #eee, #fff);
+    box-shadow: 0px 0px 5px #2897ff;
+    background: linear-gradient(to top, #181a1d, #3a3c4d);
 }
 
 .cart:active {

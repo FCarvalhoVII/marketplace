@@ -1,9 +1,11 @@
 .home-container {
     width: 100%;
+    min-height: 100vh;
 }
 
 .body-container {
     display: flex;
+    min-height: 100vh;
 }
 
 .content-container {
@@ -11,9 +13,9 @@
     flex-direction: column;
     align-items: center;
 
-    background: #e0e9fa;
+    background: #181a1d;
     width: 100%;
-    margin-top: 5px;
+    margin: 5px 50px 0 0;
     border-radius: 3px;
 }
 
@@ -22,7 +24,7 @@
     letter-spacing: 0.07em;
     margin: 10px;
 
-    background: -webkit-linear-gradient(#1c78fa, #4090ff33);
+    background: -webkit-linear-gradient(#2897ff, #4090ff33);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -32,7 +34,7 @@
     height: 2px;
     margin: 0;
     border: none;
-    background: linear-gradient(to right, #e0e9fa, #4090ff, #e0e9fa);
+    background: linear-gradient(to right, #181a1d, #2897ff, #181a1d);
 }
 
 .products-container {
