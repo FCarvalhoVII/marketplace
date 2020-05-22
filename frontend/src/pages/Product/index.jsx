@@ -68,6 +68,8 @@ function Product() {
                                 <span>Quantidade em estoque: { stock }</span>
 
                                 <span>Vendedor: { salesman }</span>
+
+                                <button className="button">Comprar</button>
                             </div>
                         </div>
                         <div className="description">
