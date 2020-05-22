@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MdDelete } from 'react-icons/md'
+import { MdDelete, MdEdit } from 'react-icons/md'
 
 import ConfirmDeleteProduct from '../../../components/User/DeleteProduct'
 
@@ -24,24 +24,27 @@ function UserContent({ name, city, products }) {
             <ul>
                 <h3>Produtos a venda:</h3>
 
-                {products.map(product => (
-                    <Link to={`/profile/${product.id}`} key={product.id}>
-                        <li>
+                {products.map(product => (                
+                    <li  key={product.id}>
+                        <div className="mini-img">
+                            <img src={null} alt=""/>
+                        </div>
 
-                            <div className="mini-img">
-                                <img src={null} alt=""/>
-                            </div>
+                        <span>{product.name}</span>
 
-                            <span>{product.name}</span>
+                        <span>
+                            {
+                                Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
+                                    .format(product.price)
+                            }
+                        </span>
 
-                            <span>
-                                {
-                                    Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
-                                        .format(product.price)
-                                }
-                            </span>
+                        <span> Estoque: {product.stock}</span>
 
-                            <span> Estoque: {product.stock}</span>
+                        <div>
+                            <Link to={`/profile/${product.id}`}>
+                                <button className="button-cancel"><MdEdit /></button>
+                            </Link>
 
                             <button 
                                 className="button-delete" 
@@ -49,8 +52,8 @@ function UserContent({ name, city, products }) {
                             >
                                 <MdDelete />
                             </button>
-                        </li>
-                    </Link>
+                        </div>
+                    </li>
                 ))}
             </ul>
             <ConfirmDeleteProduct 
