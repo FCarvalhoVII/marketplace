@@ -18,6 +18,8 @@ function Product() {
     
     const { productId } = useParams()
 
+    const userId = localStorage.getItem('token')
+
     useEffect(() => {
         api.get(`product/${productId}`)
             .then(response => {
@@ -32,6 +34,57 @@ function Product() {
                 alert('Falha ao tentar obter resposta com o servidor, tente mais tarde.')
             })
     }, [productId])
+
+    async function handleBuy() {
+        try {
+            const responseCart = await api.post('cart', { salePrice: price }, {
+                headers: {
+                    Authorization: `Bearer ${userId}`
+                }
+            })
+
+            const cartId = await responseCart.data.id
+            const quantity = 1
+
+            await api.post(`cart/${cartId}`, {
+                productId,
+                quantity
+            }, {
+                headers: {
+                    Authorization: `Bearer ${userId}`
+                }
+            })
+
+            adjustStock(quantity)
+
+        } catch(err) {
+
+            alert('Erro na compra, tente novamente.')
+        }
+    }
+
+    async function adjustStock(quantity) {
+        if (quantity === 0) {
+            return alert('O produto não possui estoque.')
+        }
+
+        const result = stock - quantity
+
+        try {
+            await api.put(`profile/product/${productId}`, {
+                stock: result
+            }, {
+                headers: {
+                    Authorization: `Bearer ${userId}`
+                }
+            })
+
+            alert('Compra realizada com sucesso!')
+            
+        } catch(err) {
+            alert('Ocorreu um erro inesperado.')
+        }
+    }
 
     return (
         <div className="home-container">
@@ -69,7 +122,7 @@ function Product() {
 
                                 <span>Vendedor: { salesman }</span>
 
-                                <button className="button">Comprar</button>
+                                <button className="button" onClick={handleBuy}>Comprar</button>
                             </div>
                         </div>
                         <div className="description">
