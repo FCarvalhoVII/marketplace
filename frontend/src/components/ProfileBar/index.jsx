@@ -23,8 +23,8 @@ function ProfileBar({ name }) {
                     <p>Adicionar produto a venda</p>
                 </Link>
                 <hr/>
-                <Link className="link" to="/">
-                    <p>Produtos vendidos</p>
+                <Link className="link" to="/solds">
+                    <p>Produtos comprados</p>
                 </Link>
                 <hr/>
             </section>

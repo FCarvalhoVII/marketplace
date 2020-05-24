@@ -9,6 +9,7 @@ import Profile from './pages/Profile'
 import CreateAddress from './pages/Profile/Create'
 import ProfileInfo from './pages/Profile/Info'
 import EditProduct from './pages/Profile/EditProduct'
+import ProductsSold from './pages/Profile/ProductsSold'
 import Product from './pages/Product'
 import AddProduct from './pages/Profile/AddProduct'
 
@@ -24,6 +25,7 @@ function Routes() {
                 <Route path="/profile/addProduct" component={AddProduct} />
                 <Route path="/profile/info" component={ProfileInfo} />
                 <Route path="/profile/:productId" children={<EditProduct />} />
+                <Route path="/solds" component={ProductsSold} />
                 <Route path="/product/:productId" children={<Product />} />
                 <Route path="/address" component={CreateAddress} />
             </Switch>
