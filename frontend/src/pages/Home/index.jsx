@@ -11,12 +11,21 @@ import './styles.css'
 
 function Home() {
     const [products, setProducts] = useState([])
+    const [page, setPage] = useState(1)
 
     useEffect(() => {
-        api.get('products').then(response => {
+        api.get('products', { params: { page } }).then(response => {
             setProducts(response.data)
         })
-    }, [])
+    }, [page])
+
+    function handleNextPage() {
+        setPage(page + 1)
+    }
+
+    function handlePreviousPage() {
+        setPage(page - 1)
+    }
 
     return (
         <div className="home-container">
@@ -40,6 +49,16 @@ function Home() {
                                 productId={product.id}
                             />
                         ))}
+                    </div>
+                    <div className="buttons-page">
+                        <button 
+                            onClick={handlePreviousPage} 
+                            disabled={page === 1} 
+                        >
+                            Anterior
+                        </button>
+
+                        <button onClick={handleNextPage} >Próxima</button>
                     </div>
                 </div>
             </div>

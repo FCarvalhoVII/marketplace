@@ -41,3 +41,39 @@
     width: 100%;
     padding-bottom: 20px;
 }
+
+.buttons-page {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.buttons-page button {
+    background: #2897ffd6;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: filter 0.2s;
+}
+
+.buttons-page button:hover {
+    filter: brightness(120%);
+    box-shadow: 0px 0px 5px #2897ffd6;
+}
+
+.buttons-page button:active {
+    filter: brightness(80%);
+}
+
+.buttons-page button:disabled {
+    filter: opacity(50%);
+    box-shadow: none;
+    cursor: not-allowed;
+}
