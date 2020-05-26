@@ -10,7 +10,7 @@ function UserContent({ name, city, products }) {
             <h3>{ city }</h3>
 
             <ul>
-                <h3>Produtos vendidos:</h3>
+                <h3>Produtos Comprados:</h3>
 
                 {products.map(product => (                
                     <li  key={product.id}>
