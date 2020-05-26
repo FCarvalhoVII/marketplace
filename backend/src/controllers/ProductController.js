@@ -4,13 +4,17 @@ const Category = require('../models/Category')
 
 module.exports = {
     async listAllProducts(req, res) {
+        const { page = 1 } = req.query
+
         try {
             const products = await Product.findAll({
                 attributes: ['id', 'name', 'description', 'stock', 'price'],
                 include: [
                     { association: 'category', attributes: ['name'] },
                     { association: 'user', attributes: ['name'] }
-                ]
+                ],
+                limit: 15,
+                offset: ((page - 1) * 15)
             })
 
             return res.json(products)
@@ -21,11 +25,14 @@ module.exports = {
 
     async listProductsByCategory(req, res) {
         const { categoryId } = req.params
+        const { page = 1 } = req.query
 
         try {
             const products = await Category.findByPk(categoryId, {
                 attributes: ['name'],
-                include: { association: 'products' }
+                include: { association: 'products' },
+                limit: 15,
+                offset: ((page - 1) * 15)
             })
 
             return res.json(products)
@@ -36,11 +43,14 @@ module.exports = {
 
     async listUserProducts(req, res) {
         const id = req.userId
+        const { page = 1 } = req.query
 
         try {
             const userProducts = await User.findByPk(id, {
                 attributes: ['name'],
-                include: { association: 'products' }
+                include: { association: 'products' },
+                limit: 15,
+                offset: ((page - 1) * 15)
             })
 
             return res.json(userProducts)

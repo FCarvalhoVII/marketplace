@@ -4,6 +4,7 @@ const ProductSold = require('../models/ProductSold')
 module.exports = {
     async listPurchasedProducts(req, res) {
         const id = req.userId
+        const { page = 1 } = req.query
         
         try {
             const resultSale = await Sale.findAll({
@@ -18,7 +19,9 @@ module.exports = {
             
             const resultProducts = await ProductSold.findAll({
                 where: { sale_id: cartId },
-                include: { association: 'products', attributes: ['name'] }
+                include: { association: 'products', attributes: ['name'] },
+                limit: 15,
+                offset: ((page - 1) * 15)
             })
 
             return res.json(resultProducts)
