@@ -32,6 +32,8 @@ function ProductsSold() {
             }
         }).then(response => {
             setProducts(response.data)
+        }).catch(() => {
+            alert('Você ainda não comprou produtos')
         })
 
     }, [userId])

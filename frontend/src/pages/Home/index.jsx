@@ -14,9 +14,13 @@ function Home() {
     const [page, setPage] = useState(1)
 
     useEffect(() => {
-        api.get('products', { params: { page } }).then(response => {
-            setProducts(response.data)
-        })
+        api.get('products', { params: { page } })
+            .then(response => {
+                setProducts(response.data)
+            })
+            .catch(() => {
+                alert('Falha ao obter dados do servidor.')
+            })
     }, [page])
 
     function handleNextPage() {
