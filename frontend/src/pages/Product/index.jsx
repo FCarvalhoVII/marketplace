@@ -31,7 +31,7 @@ function Product() {
                 setSalesman(response.data.user.name)
             })
             .catch(() => {
-                alert('Falha ao tentar obter resposta com o servidor, tente mais tarde.')
+                alert('Falha ao tentar obter resposta do servidor, tente mais tarde.')
             })
     }, [productId])
 
